@@ -9,7 +9,7 @@ services:
       - PGID=1001
       - TZ=Europe/Berlin
     volumes:
-      - ./radarr/config:/config
+      - ./config:/config
       - /mnt/mediaStorage/data/movies:/mnt/mediaStorage/data/movies
       - /mnt/mediaStorage/data/anime/movies:/mnt/mediaStorage/data/anime/movies
       - /mnt/mediaStorage/downloads/complete/movies:/mnt/mediaStorage/downloads/complete/movies
