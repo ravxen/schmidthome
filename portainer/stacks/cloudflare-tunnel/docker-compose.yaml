@@ -1,0 +1,8 @@
+services:
+    cloudflared:
+        image: cloudflare/cloudflared:latest
+        container_name: "cloudflare-tunnel"
+        restart: unless-stopped
+        network_mode: "host"
+        command: tunnel --no-autoupdate run
+        env_file: stack.env
