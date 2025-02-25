@@ -12,6 +12,6 @@ services:
       - ./radarr/config:/config
       - /mnt/mediaStorage/data/movies:/mnt/mediaStorage/data/movies
       - /mnt/mediaStorage/data/anime/movies:/mnt/mediaStorage/data/anime/movies
-      - /mnt/mediaStorage/downloads/movies:/mnt/mediaStorage/downloads/movies
-      - /mnt/mediaStorage/downloads/anime/movies:/mnt/mediaStorage/downloads/anime/movies
+      - /mnt/mediaStorage/downloads/complete/movies:/mnt/mediaStorage/downloads/complete/movies
+      - /mnt/mediaStorage/downloads/complete/anime/movies:/mnt/mediaStorage/downloads/complete/anime/movies
     
