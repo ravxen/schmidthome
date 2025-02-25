@@ -1,0 +1,17 @@
+services:
+  radarr:
+    image: lscr.io/linuxserver/radarr:latest
+    container_name: radarr
+    network_mode: "host"
+    restart: unless-stopped
+    environment:
+      - PUID=1000
+      - PGID=1001
+      - TZ=Europe/Berlin
+    volumes:
+      - ./radarr/config:/config
+      - /mnt/mediaStorage/data/movies:/mnt/mediaStorage/data/movies
+      - /mnt/mediaStorage/data/anime/movies:/mnt/mediaStorage/data/anime/movies
+      - /mnt/mediaStorage/downloads/movies:/mnt/mediaStorage/downloads/movies
+      - /mnt/mediaStorage/downloads/anime/movies:/mnt/mediaStorage/downloads/anime/movies
+    
