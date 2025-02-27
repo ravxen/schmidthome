@@ -8,8 +8,8 @@ services:
       - stack.env
         required: true
     environment:
-      - PUID=${PUID}
-      - PGID=${PGID}
+      - PUID=${USERID}
+      - PGID=${GROUPID}
       - TZ=${TZ}
     volumes:
       - ${CONFIG_PATH}:/config
