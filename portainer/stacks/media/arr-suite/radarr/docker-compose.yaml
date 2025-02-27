@@ -1,8 +1,8 @@
 services:
   radarr:
     image: lscr.io/linuxserver/radarr:latest
-    container_name: radarr
-    network_mode: "host"
+    container_name: "radarr"
+    network_mode: host
     restart: unless-stopped
     env_file: 
       - stack.env
