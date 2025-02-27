@@ -3,6 +3,7 @@ services:
     image: lscr.io/linuxserver/sonarr:latest
     container_name: "sonarr"
     network_mode: host
+    restart: unless-stopped
     env_file:
       - stack.env
     volumes:
@@ -11,4 +12,3 @@ services:
       - /mnt/mediaStorage/data/anime/shows:/mnt/mediaStorage/data/anime/shows
       - /mnt/mediaStorage/downloads/complete/shows:/mnt/mediaStorage/downloads/complete/shows
       - /mnt/mediaStorage/downloads/complete/anime/shows:/mnt/mediaStorage/downloads/complete/anime/shows
-    restart: unless-stopped
