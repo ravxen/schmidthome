@@ -1,0 +1,13 @@
+services:
+  jellyfin:
+    image: lscr.io/linuxserver/jellyfin:latest
+    container_name: "jellyfin"
+    restart: unless-stopped
+    env_file:
+      - stack.env
+    volumes:
+      - ./config:/config
+      - /mnt/mediaStorage/data/shows:/mnt/mediaStorage/data/shows
+      - /mnt/mediaStorage/data/anime/shows:/mnt/mediaStorage/data/anime/shows
+      - /mnt/mediaStorage/data/movies:/mnt/mediaStorage/data/movies
+      - /mnt/mediaStorage/data/anime/movies:/mnt/mediaStorage/data/anime/movies
