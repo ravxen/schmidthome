@@ -5,7 +5,7 @@ services:
     network_mode: host
     restart: unless-stopped
     env_file:
-      - stack.env
+      - path: ./stack.env
         required: true
     environment:
       - PUID=${USERID}

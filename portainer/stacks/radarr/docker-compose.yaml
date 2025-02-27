@@ -1,0 +1,20 @@
+services:
+  radarr:
+    image: lscr.io/linuxserver/radarr:latest
+    container_name: "radarr"
+    network_mode: host
+    restart: unless-stopped
+    env_file: 
+      - path: ./stack.env
+        required: true
+    environment:
+      - PUID=${USERID}
+      - PGID=${GROUPID}
+      - TZ=${TIMEZONE}
+    volumes:
+      - ${CONFIG_PATH}:/config
+      - ${DATA_DIR_MOVIES}:${DATA_DIR_MOVIES}
+      - ${DATA_DIR_ANIME-MOVIES}:${DATA_DIR_ANIME-MOVIES}
+      - ${DATA_DIR_DL-MOVIES}:${DATA_DIR_DL-MOVIES}
+      - ${DATA_DIR_DL-ANIME-MOVIES}:${DATA_DIR_DL-ANIME-MOVIES}
+    
