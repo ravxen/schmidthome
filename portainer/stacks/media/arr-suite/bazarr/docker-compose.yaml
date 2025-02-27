@@ -4,11 +4,13 @@ services:
     container_name: "bazarr"
     network_mode: host
     restart: unless-stopped
-    env_file:
-      - stack.env
+    environment:
+      - PUID=${PUID}
+      - PGID=${PGID}
+      - TZ=${TZ}
     volumes:
-      - ./config:/config
-      - /mnt/mediaStorage/data/shows:/mnt/mediaStorage/data/shows
-      - /mnt/mediaStorage/data/anime/shows:/mnt/mediaStorage/data/anime/shows
-      - /mnt/mediaStorage/data/movies:/mnt/mediaStorage/data/movies
-      - /mnt/mediaStorage/data/anime/movies:/mnt/mediaStorage/data/anime/movies
+      - ${CONFIG_PATH}:/config
+      - ${DATA_DIR_SHOWS}:${DATA_DIR_SHOWS}
+      - ${DATA_DIR_ANIME-SHOWS}:${DATA_DIR_ANIME-SHOWS}
+      - ${DATA_DIR_MOVIES}:${DATA_DIR_MOVIES}
+      - ${DATA_DIR_ANIME-MOVIES}:${DATA_DIR_ANIME-MOVIES}
