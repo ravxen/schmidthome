@@ -8,6 +8,7 @@ services:
       - stack.env
         required: true
     environment:
+      - LOG_LEVEL=${LOG_LEVEL}
       - PUID=${PUID}
       - PGID=${PGID}
       - TZ=${TIMEZONE}
