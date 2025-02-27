@@ -4,6 +4,9 @@ services:
     container_name: "bazarr"
     network_mode: host
     restart: unless-stopped
+    env_file:
+      - stack.env
+        required: true
     environment:
       - PUID=${PUID}
       - PGID=${PGID}
