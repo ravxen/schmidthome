@@ -10,7 +10,7 @@ services:
     environment:
       - PUID=${USERID}
       - PGID=${GROUPID}
-      - TZ=${TZ}
+      - TZ=${TIMEZONE}
     volumes:
       - ${CONFIG_PATH}:/config
       - ${DATA_DIR_SHOWS}:${DATA_DIR_SHOWS}
