@@ -4,9 +4,7 @@ services:
     container_name: "radarr"
     network_mode: host
     restart: unless-stopped
-    env_file: 
-      - path: ./stack.env
-        required: true
+    env_file: stack.env
     environment:
       - PUID=${USERID}
       - PGID=${GROUPID}
